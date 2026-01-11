@@ -2,21 +2,28 @@ const evenBtn = document.getElementById("evenBtn");
 const oddBtn = document.getElementById("oddBtn");
 const result = document.getElementById("result");
 
-let number = 0;
+function getRandomSixDigit() {
+  return Math.floor(Math.random() * 900000) + 100000;
+}
 
 evenBtn.addEventListener("click", () => {
-  number++;
+  let num = getRandomSixDigit();
 
-  if (number % 2 === 0) {
-    result.textContent = number + " is EVEN";
+  // make sure it's EVEN
+  if (num % 2 !== 0) {
+    num = num + 1;
   }
+
+  result.textContent = num + " is EVEN";
 });
 
 oddBtn.addEventListener("click", () => {
-  number++;
+  let num = getRandomSixDigit();
 
-  if (number % 2 !== 0) {
-    result.textContent = number + " is ODD";
+  // make sure it's ODD
+  if (num % 2 === 0) {
+    num = num + 1;
   }
+
+  result.textContent = num + " is ODD";
 });
-result.textContent = "Not matching, try again";
