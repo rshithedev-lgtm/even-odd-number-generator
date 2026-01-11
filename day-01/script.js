@@ -1,6 +1,21 @@
-const message = document.getElementById("message");
-const button = document.getElementById("changeBtn");
+let count = 0;
 
-button.addEventListener("click", () => {
-  message.textContent = "JavaScript is working! 🚀";
+const countDisplay = document.getElementById("count");
+const increaseBtn = document.getElementById("increase");
+const decreaseBtn = document.getElementById("decrease");
+const resetBtn = document.getElementById("reset");
+
+increaseBtn.addEventListener("click", () => {
+  count++;
+  countDisplay.textContent = count;
+});
+
+decreaseBtn.addEventListener("click", () => {
+  count--;
+  countDisplay.textContent = count;
+});
+
+resetBtn.addEventListener("click", () => {
+  count = 0;
+  countDisplay.textContent = count;
 });
